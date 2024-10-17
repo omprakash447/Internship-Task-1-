@@ -1,0 +1,109 @@
+.features-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    position: relative;
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+    }
+    .slider-item {
+        flex: 0 0 25%;
+        /* Default: Show 4 slides on larger screens */
+        padding: 15px;
+        box-sizing: border-box;
+        .card-content {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            }
+            .feature-image {
+                width: 100%;
+                height: auto;
+                /* Adjust height for responsive image scaling */
+                max-height: 200px;
+                /* Set a max height for consistency */
+                object-fit: cover;
+                border-radius: 8px;
+            }
+            h3 {
+                font-size: 1.5rem;
+                margin: 15px 0;
+                color: #333;
+            }
+            p {
+                font-size: 1rem;
+                color: #666;
+            }
+        }
+    }
+    .marquee-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        position: sticky;
+        bottom: 10px;
+        width: 100%;
+        z-index: 1;
+        .dot {
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &.active {
+                background-color: #333;
+            }
+        }
+    }
+}
+
+// Breakpoints for responsive design
+@media (max-width: 1200px) {
+    .slider-item {
+        flex: 0 0 33.33%;
+        /* Show 3 slides for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .slider-item {
+        flex: 0 0 50%;
+        /* Show 2 slides for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-item {
+        flex: 0 0 100%;
+        /* Show 1 slide for mobile screens */
+        padding: 10px;
+        /* Reduce padding on smaller devices */
+        .card-content {
+            padding: 15px;
+            /* Adjust padding for mobile */
+            h3 {
+                font-size: 1.2rem;
+                /* Slightly smaller heading */
+            }
+            p {
+                font-size: 0.9rem;
+                /* Slightly smaller paragraph text */
+            }
+        }
+        .marquee-dots .dot {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}

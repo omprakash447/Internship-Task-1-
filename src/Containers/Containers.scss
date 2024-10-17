@@ -1,0 +1,115 @@
+.features-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5; // Light background for contrast
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333; // Title color
+    }
+    .carousel-container {
+        position: relative; // Allows absolute positioning for buttons
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff; // Primary color for buttons
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+            &.left {
+                left: 10px; // Position the left button
+            }
+            &.right {
+                right: 10px; // Position the right button
+            }
+            &:hover {
+                background-color: #0056b3; // Darker shade on hover
+            }
+        }
+        .slider-item {
+            padding: 10px;
+        }
+        .card-content {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: white; // Card background
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow effect
+            .feature-image {
+                width: 100%;
+                height: auto; // Responsive image
+                border-radius: 8px 8px 0 0; // Rounded corners at the top
+            }
+            h3 {
+                margin: 10px 0;
+                font-size: 1.5em;
+                color: #333;
+            }
+            p {
+                font-size: 1em;
+                color: #666; // Slightly lighter text
+            }
+        }
+    }
+    .slick-dots {
+        margin-top: 15px; // Space between slider and dots
+        display: flex;
+        justify-content: center;
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb; // Inactive dots
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            &.active {
+                background-color: #007bff; // Active dot color
+            }
+            &:hover {
+                background-color: #0056b3; // Darker shade on hover
+            }
+        }
+    }
+    // Responsive Design
+    @media (max-width: 1024px) {
+        .nav-button {
+            padding: 8px 12px;
+        }
+        .section-title {
+            font-size: 1.8em;
+        }
+        .card-content {
+            padding: 15px;
+        }
+    }
+    @media (max-width: 600px) {
+        .nav-button {
+            padding: 6px 10px;
+        }
+        .section-title {
+            font-size: 1.5em;
+        }
+        .card-content {
+            padding: 10px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+        }
+    }
+    @media (max-width: 480px) {
+        .section-title {
+            font-size: 1.2em;
+        }
+        .dot {
+            height: 6px;
+            width: 6px;
+        }
+    }
+}
