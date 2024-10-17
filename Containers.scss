@@ -1,0 +1,82 @@
+.features-section {
+    position: relative;
+    padding: 40px 20px;
+    text-align: center;
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        .slider-item {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            .card-content {
+                background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                h3 {
+                    margin-top: 15px;
+                    font-size: 1.5rem;
+                    color: #333;
+                }
+                p {
+                    font-size: 1rem;
+                    color: #666;
+                }
+                .feature-image {
+                    max-width: 100%;
+                    border-radius: 8px;
+                }
+            }
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            &.left {
+                left: 10px;
+            }
+            &.right {
+                right: 10px;
+            }
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            &:disabled {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+        }
+    }
+    // Custom dot styling
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .dot {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &.active {
+                background-color: #333;
+            }
+        }
+    }
+}
